@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Catálogo de Libros</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+<header class="top">
+  <h1>Catálogo de Libros (Plantilla)</h1>
+  <div class="row">
+    <input id="apiBase" placeholder="API Base (ej: https://tu-dominio.com)" />
+    <button id="btnSaveApi">Guardar API</button>
+  </div>
+  <p class="hint" id="msg"></p>
+</header>
+
+<main class="container">
+  <section class="card">
+    <h2 id="formTitle">Nuevo libro</h2>
+
+    <input type="hidden" id="bookId" />
+
+    <label>Título *</label>
+    <input id="title" />
+
+    <label>Autor *</label>
+    <input id="author" />
+
+    <label>Año</label>
+    <input id="year" type="number" />
+
+    <label>ISBN</label>
+    <input id="isbn" />
+
+    <div class="row">
+      <button id="btnCreate" type="button">Crear</button>
+      <button id="btnUpdate" type="button" disabled>Actualizar</button>
+      <button id="btnCancel" type="button" disabled class="secondary">Cancelar</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Listado</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Título</th><th>Autor</th><th>Año</th><th>ISBN</th><th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </section>
+</main>
+
+<script src="./js/app.js"></script>
+</body>
+</html>
