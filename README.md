@@ -1,5 +1,6 @@
 ### Plantilla para proyectos finales
-* Proyecto de ejemplo sencillo y simple
+* Proyecto de ejemplo sencillo y simple, incluye la creación de la aplicación móvil
+* Dominio de prueba: appsmoviles.grupofmo.com
 # Tecnologías usadas en el Backend
 * Node.js
 # Módulos
@@ -7,7 +8,6 @@
 * dotenv 17.2.3
 * express 5.2.1
 * mariadb 3.4.5
-* morgan 1.10.1
 * mysql2 3.16.0
 * sequelize 6.37.7
 # Tecnologías usadas en el Frontend
@@ -33,9 +33,18 @@ npm i
 
 # Para ejecutar el backend
 * Debe ejecutar el backend, se debe estar dentro del directorio del backend
-* Puerto de la configuración: 8080
+* Puerto de la configuración: 3000
 ```
 nodemon server.js
+```
+#####  Inicio 1
+```
+npm run start
+```
+
+##### Inicio 2
+```
+npm run dev
 ```
 
 # Para ejecutar el Frontend
@@ -43,8 +52,43 @@ nodemon server.js
 ```
 npm i http-server
 ```
-* Puerto de la configuración: 8081
+* Puerto de la configuración: 8080
 * Para ejecutar el Frontend, se debe estar dentro el directorio del frontend
 ```
-http-server
+http-server -p 8080
 ```
+
+# Creación del proyecto Cordova (aplicación móvil)
+* Es necesario instalar el paquete cordova de forma global:
+```
+npm i -g cordova
+```
+* Paso de generación
+```
+cordova create appmovil com.grupofmo.catalogolibros CatalogoLibros
+```
+Dentro del directorio de la aplicación, realizar lo siguiente:
+```
+cordova platform add android@latest
+cordova platform ls
+```
+Si todo lo anterior fue correcto, dentro del directorio www de la aplicación, eliminar el contenido y trasladar el contenido del frontend hacia www
+```
+rm -rf www/*
+cp -r ../frontend/* www/
+```
+Agregar en el archivo config.xml lo siguiente:
+```
+<access origin="*" />
+<allow-navigation href="*" />
+```
+Realizar la compilación o generación del apk
+```
+cordova build android
+```
+El archivo .apk se genera dentro del directorio:
+```
+platforms/android/app/build/outputs/apk/debug
+```
+
+

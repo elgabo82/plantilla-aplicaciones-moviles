@@ -7,7 +7,7 @@ async function main() {
   const app = buildApp(models);
 
   const port = Number(process.env.PORT || 3000);
-  app.listen(port, () => console.log(`API running on port ${port}`));
+  app.listen(port, () => console.log(`API corriendo en el puerto ${port}`));
 }
 
 main().catch((err) => {

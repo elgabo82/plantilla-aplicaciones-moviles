@@ -14,6 +14,6 @@ module.exports = (models) => {
   v1.use("/books", require("./routes/v1/books.routes")(models));
   app.use("/api/v1", v1);
 
-  app.use((req, res) => res.status(404).json({ message: "Not found" }));
+  app.use((req, res) => res.status(404).json({ message: "No encontrado" }));
   return app;
 };
