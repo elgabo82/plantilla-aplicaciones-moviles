@@ -1,4 +1,4 @@
-const DEFAULT_API_BASE = "http://appsmoviles.grupofmo.com:5555";
+const DEFAULT_API_BASE = "https://appsmoviles.grupofmo.com:5555";
 
 const $ = (id) => document.getElementById(id);
 
